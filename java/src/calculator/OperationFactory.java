@@ -1,11 +1,5 @@
 package calculator;
 
-import calculator.operations.Operation;
-import calculator.operations.OperationAdd;
-import calculator.operations.OperationDiv;
-import calculator.operations.OperationMul;
-import calculator.operations.OperationSub;
-
 public class OperationFactory {
     public static Operation createOperation(char operator) {
         Operation operation = null;

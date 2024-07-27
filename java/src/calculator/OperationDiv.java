@@ -1,4 +1,4 @@
-package calculator.operations;
+package calculator;
 
 public class OperationDiv extends Operation {
     @Override

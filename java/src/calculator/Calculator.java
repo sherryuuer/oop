@@ -1,7 +1,5 @@
 package calculator;
 
-import calculator.operations.Operation;
-
 public class Calculator {
     public static void main(String[] args) {
         Operation operation;

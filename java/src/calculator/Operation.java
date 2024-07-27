@@ -1,4 +1,4 @@
-package calculator.operations;
+package calculator;
 
 public abstract class Operation {
     public double numberA;
