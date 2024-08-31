@@ -238,15 +238,30 @@ classDiagram
   * 重要的、复杂的方法，可以考虑作为模板方法。
 
 
+## Java的基础
 
 
 
 
 
-## 学习思考笔记
+
+
+## 其他学习思考笔记
 
 抽象类是一种特殊的类，它不能被直接实例化，只能被继承。抽象类的主要用途是为子类提供一种模板，定义某些方法而不具体实现它们。这种设计可以在面向对象编程中实现多态性和代码重用。
 
 - 工厂模式是根据输入的*参数不同*可以得到不同的结果，当需要为简单的对象创建逻辑的时候
 - 策略类主要*封装算法和行为*，并希望在运行时选择其中之一
 - 装饰器模式，通过一系列装饰者类叠加对象，会有很多小的类生成，用于*动态扩展对象功能*
+
+代码执行方法：
+
+```bash
+(base) sallyw@sallywnoMacBook-Air inheritance % javac -d out src/*
+(base) sallyw@sallywnoMacBook-Air inheritance % cd out
+(base) sallyw@sallywnoMacBook-Air out % java inheritance.src.Main
+3.605551275463989
+(base) sallyw@sallywnoMacBook-Air out %
+```
+
+这种方法的意思在于，当编译java文件的时候，我去src同级，也就是项目root路径，然后执行编译，全部输出到out，然后在out中，执行java命令，call出client的Main方法！
