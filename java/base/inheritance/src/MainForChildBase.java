@@ -10,7 +10,8 @@ public class MainForChildBase {
         Base b = c;
         System.out.println("---- b.action()");
         b.action();
-        System.out.println("---- b.s: " + b.s);
-        System.out.println("---- c.s: " + c.s);
+        // 这两行因为有字段隐藏，所以被系统标识，暂且comment out
+        // System.out.println("---- b.s: " + b.s);
+        // System.out.println("---- c.s: " + c.s);
     }
 }
