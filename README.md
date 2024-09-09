@@ -246,12 +246,6 @@ classDiagram
 
 ## 其他JAVA学习思考笔记
 
-抽象类是一种特殊的类，它不能被直接实例化，只能被继承。抽象类的主要用途是为子类提供一种模板，定义某些方法而不具体实现它们。这种设计可以在面向对象编程中实现多态性和代码重用。
-
-- 工厂模式是根据输入的*参数不同*可以得到不同的结果，当需要为简单的对象创建逻辑的时候
-- 策略类主要*封装算法和行为*，并希望在运行时选择其中之一
-- 装饰器模式，通过一系列装饰者类叠加对象，会有很多小的类生成，用于*动态扩展对象功能*
-
 代码执行方法：
 
 ```bash
@@ -359,3 +353,33 @@ classDiagram
 - **String**超级常用
   - 该类本身是final修饰的，所以不能被继承，该类很特殊功能很多，需要多熟悉！！
   - 字符串对象存储在*常量池*，理解计算机的内部原理和Java的结合是一种很棒的感觉
+- **可变字符序列StringBuffer/StringBuilder**
+  - 字符串String拼接是每次创建一个新的对象，但是这俩却一直是一个对象
+  - Buffer的速度比Builder慢，但是线程安全
+- **Arrays类**
+  - `import java.util.Arrays;`
+  - 可以直接对数组进行打印，比如 `toString()`
+  - 可以进行*自然排序*，对于基本类型直接用sort方法，但是对类，要*重写compareTo*方法，不然会报类型错误的
+  - 可以进行*定制排序*，需要在排序的时候实现*Comparable接口*内的compare方法来定制排序方法
+  - `Arrays.binarySearch(arr, 5)` 二分查找，要求已经排序的数组
+  - `Arrays.copyOf(arr, <length>)` 复制数组，指定长度
+  - `Arrays.equals(arr1, arr2)` 是重载方法
+- **Math类**
+  - `java.lang.Math`
+  - `java.math`
+  - 都是静态方法，直接用就好：比如`Math.abs(-5.5)`
+  - BigInteger就是贼大整数
+  - BigDecimal支持任意精度的定点数
+  - 这两个不是包装类，只能通过对应的构造器来创建对象
+- **Random类**
+  - `(new Random()).nextInt(100)`
+- **Data日期类**
+  - `long start = System.currentTimeMillis();`经常用来计时，当前毫秒时间
+  - `java.util.Data`
+  - `java.text.DataFormat`
+  - `java.util.Calendar`可以设置时区和语言环境得到日历，获取指定的日历字段，可以设置字段年月日时分秒啥的
+  - `java.time.LocalDateTime`
+  - `java.time.Instant`是计算机用的时间
+  - `java.time.DataTimeFormatter`这个是格式化日期的好像之前见过
+
+- **集合**：Set，List，Map三种体系，Java集合就是一种容器，可以创建栈，队列，链表，哈希表等
