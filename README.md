@@ -382,4 +382,41 @@ classDiagram
   - `java.time.Instant`是计算机用的时间
   - `java.time.DataTimeFormatter`这个是格式化日期的好像之前见过
 
-- **集合**：Set，List，Map三种体系，Java集合就是一种容器，可以创建栈，队列，链表，哈希表等
+- **集合**：Java集合就是一种容器，可以创建栈，队列，链表，哈希表等
+  - 集合框架集：`Collection（List，Queue，Set），Map（HashMap，TreeMap）`
+  - **Collection**只能存储对象，就想象收集东西的感觉
+    - add(Object o), addAll(Collection c)
+    - boolean remove(Object o),boolean removeAll(Collection c)（删除交集）
+    - boolean retainAll(Collection c)（保留两个集合的交集）
+    - void clear()
+    - boolean isEmpty()
+    - boolean contains(Object o), boolean containsAll(Collection c)
+    - List用的比如：Object get(int index), int indexOf(Object o), Object remove(int index), Object set(int index, Object element)
+  - Collection的实现只能靠子类实现比如：`Collection coll = new ArrayList();`然后再使用上述方法操作
+  - **foreach循环遍历**集合，使用的是Iterable接口，只有实现了这个接口才能用foreach
+  - **Iterator迭代器**：迭代器就是为了容器遍历而生的
+    - boolean hasNext()
+    - Object next()
+    - void remove() ：这里的删除方法比较方便，可以一边迭代一边删除，Collection的删除必须指定对象
+    - 上面这三个方法正体现了迭代器的工作原理，靠不断移动cursor指针指向下一个元素，删除最开始的元素，直到指针指向0和size一致迭代完毕
+  - *List*接口中的几个重要的实现类：*ArrayList 动态数组, LinkedList 双向列表, Vector 动态数组, Stack 堆栈, Deque 双端队列*
+    - LinkedList根据自身性质其实可以作为堆栈和队列使用，比如addFirst，removeFirst，addLast，pollFirst
+    - Vector是相对于ArrayList较老的一种动态数组，效率低，但是线程安全
+    - Stack是Vector的子类，后进先出，有自己的methods
+    - List还有自己的迭代器：ListIterator
+  - **Set**的实现类：*HashSet（其实是HashMap实现的），LinkedHashSet（内部实现是LinkedHashMap），TreeSet（内部实现是TreeMap）*
+  - **Map**保存键值对，键不可以重复，*TreeMap*是基于红黑树的，可以保证顺序的，*HashMap*则不保证顺序，*LinkedHashMap*则是保证了顺序的HashMap，啥都有哦这接口
+    - put(key(Object), value(Object)), putAll(Map)
+    - get(key)
+    - map.remove(key)
+    - 遍历方法：`map.keySet(), map.values(), map.entrySet()`
+
+- **泛型**Generics，是指*泛化的集合的类型*，一开始不知道什么类型用T表示，集合的问题就是里面全都是Object类型，当拿出来的时候还需向下转型
+  - 书中的比喻很绝，就是说你一堆透明瓶子不知道装的是什么调味料，每次用都要验证一下味道，所以一开始就给他贴标签就好了呀
+  - ArrayList<E>这个E时类型形参的意思，形参就是函数中那个形参的东西一开始没确定内容的时候的用户，ArrayList<String>这里的类型就是实参。这种参数化的类型就叫做泛型！意思就是**将类型参数化了！**定义的类型就是标签，这也保证了类型安全
+  - E:element, T:type, K:key, V:value
+  - 指定的类型*必须是引用类型*，不能是基本类型
+  - **泛型方法**可以在定义method的时候不固定类型而用T表示，从而在使用方法的时候更灵活地定义容器类型
+  - *？作为通配符使用*：当不确定E的类型的时候，使用？即可，那么后面就可以传入Integer，String等各种类型
+  - 使用 *extends* 表示类型的上限，也就是父类
+  - 利用泛型，Collection中有非常多的工具类，因为可以不用规定类型，泛用性提高，成为工具
