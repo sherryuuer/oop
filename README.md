@@ -467,3 +467,13 @@ classDiagram
     - *死锁*，是双方线程都在等待对方解锁
 
   - **生产者和消费者问题/有限缓冲问题**通过代码进行理解
+
+- **网络Socket编程**也很有意思！
+- **反射**：类的加载，链接，初始化，没看懂，但是似乎在框架的使用上很重要
+- **函数式编程Lambda**：高级！`java.util.function`
+- **StreamAPI**`java.util.stream`用于处理集合，而不是IO！
+  - 数据管道！集合讲究的是数据，Stream讲究的是计算
+  - 惰性操作，这不就是Spark！？
+  - 里面的很多方法都是Spark处理的基础
+  - Scala，Java，JVM，Spark
+  - 但是Spark是在分布式系统中，这里的StreamAPI是在内存中处理的，确实语法有相通之处
