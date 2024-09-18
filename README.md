@@ -283,9 +283,14 @@ classDiagram
 - 抽象产品接口 (AbstractProduct)：为不同的产品定义接口。
 - 具体产品类 (ConcreteProduct)：实现抽象产品接口，具体表示工厂生成的产品。
 - 客户端 (Client)：使用抽象工厂来创建产品，而不需要关心具体工厂实现。
+- `java.pattern.src.abstractfactory`
 
-- `java.src.abstractfactory`
+### 状态模式（State Pattern）
 
+- 主要是有一个State的主类，然后有一堆状态继承这个State类
+- 一个Context的类，这个类会被Pass进各个的State类，使用该Context的类的内容进行判断
+- 最终可以根据Context的具体数值的设定来转换状态
+- `java.pattern.src.state`
 
 ## 其他JAVA学习思考笔记
 
