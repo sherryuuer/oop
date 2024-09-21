@@ -54,7 +54,7 @@ public class GameRole {
 
     // save the state to memento
     public RoleStateMemento saveState() {
-	return new RoleStateMemento(vit, atk, def)
+        return new RoleStateMemento(vit, atk, def);
     }
 
     // recovery the role state
