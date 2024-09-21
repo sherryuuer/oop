@@ -1,4 +1,4 @@
-package memento
+package memento;
 
 public class GameRole {
 	private int vit;
