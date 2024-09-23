@@ -312,6 +312,15 @@ classDiagram
 - Leaf（叶节点）：表示叶节点对象，叶节点没有子节点。
 - `java.pattern.src.composite`
 
+### 迭代器模式（Iterator）
+
+- 将对列表的访问和遍历放到一个迭代器对象，迭代器定义访问元素的接口。此时，同样的遍历逻辑只需要实现一次。事实上，由于迭代器模式使用太普遍，大部分高级语言都已经对它进行了封装。
+- `java.pattern.src.iterator`
+- 首先定义抽象聚集对象：Aggregate 类，定义 createIterator 方法，用于创建一个迭代器。
+- 然后定义一个具体聚集对象：ConcreteAggretate 类，除了重写抽象方法外，还需定义简单的 get、set、count 等方法。这些方法会在迭代器中使用。
+- 定义抽象迭代器对象：Iterator 类，一般包括：first、next、isDone 和 currentItem 几个抽象方法。
+- 定义具体迭代器对象：ConreteIterator 类，重写抽象方法，实现对对象的迭代。
+
 ## 其他JAVA学习思考笔记
 
 代码执行方法：
