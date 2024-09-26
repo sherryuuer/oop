@@ -338,6 +338,15 @@ classDiagram
   - ConcreteImplementor（具体实现类）：继承并实现 Implementor 的接口，在不同的具体实现类中提供不同的操作方法，通过向上转型的方式完成方法的调用。
 - `java.pattern.src.bridge`
 
+### 命令模式（Command）
+
+- 将调用操作的请求对象与实现操作的接受对象解耦，顺序为调用者->命令->接受者。
+- Command(抽象命令类)，用来声明执行操作的接口。
+- ConcreteCommond(命令实现类)，命令的具体实现，将接收者对象与动作绑定，从而调用接收者相应的操作完成命令。
+- Invoker(调用者)，调用命令实现某个请求。
+- Receive(接收者)，实施与执行与请求相关的操作。
+- `java.pattern.src.command`烤串老板和服务员的案例
+
 
 ## 其他JAVA学习思考笔记
 
