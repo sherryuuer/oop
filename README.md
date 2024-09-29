@@ -365,6 +365,10 @@ classDiagram
 - `java/pattern/src/mediator`
 - 这个模式蛮好玩的，就像是一个传话筒
 
+### 享元模式（fly weight）
+
+- 说实话这个模式我没看懂呢
+
 ## 其他JAVA学习思考笔记
 
 代码执行方法：
